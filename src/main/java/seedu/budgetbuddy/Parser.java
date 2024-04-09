@@ -103,11 +103,11 @@ public class Parser {
     }
 
     public Boolean isDeleteExpenseCommand(String input) {
-        return input.startsWith("delete");
+        return input.startsWith("delete expense");
     }
 
     public Boolean isReduceSavingCommand(String input) {
-        return input.startsWith("reduce");
+        return input.startsWith("reduce savings");
     }
     public Boolean isConvertCurrencyCommand(String input) {
         return input.startsWith("change currency");
@@ -130,7 +130,7 @@ public class Parser {
     }
 
     public boolean isListBudgetCommand(String input){
-        return input.startsWith("budget print");
+        return input.startsWith("print budget");
     }
 
     public Boolean isSettleSplitExpenseCommand(String input) {

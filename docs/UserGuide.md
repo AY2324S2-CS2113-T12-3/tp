@@ -375,7 +375,7 @@ in transport category in ascending order, and shows % of budget taken up by each
 * If any of the budgets have been exceeded, will be displayed in another table (Table 2)
 * Table 2 contains categories that exceeded budget and amount exceeded.
 
-Format: `budget print`
+Format: `print budget`
 
 
 ### Get Graphical Insights for expenses: `get expenses insights`
@@ -428,7 +428,7 @@ Advanced users are welcome to update the data directly by editing this file. How
 * Change Currency `change currency [CURRENCY_CODE]`
 * Set Budget `set budget c/CATEGORY b/BUDGET`
 * Get Budget `get budget c/CATEGORY`
-* Print Budgets `budget print`
+* Print Budgets `print budget`
 * Get Graphical Insights for expenses `get expenses insights` 
 * Get Graphical Insights for savings `get savings insights`
 

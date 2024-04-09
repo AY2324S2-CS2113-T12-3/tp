@@ -6,6 +6,8 @@ import seedu.budgetbuddy.command.ReduceSavingCommand;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ReduceSavingCommandCreator extends CommandCreator{
     private static final Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
@@ -25,21 +27,33 @@ public class ReduceSavingCommandCreator extends CommandCreator{
 
         String description = input.replace("reduce", "").trim();
 
-        if(description.contains("i/") && description.contains("a/")) {
-            try {
-                String[] parts = description.split("i/|a/", 3);
+        // Regular expressions to identify the flags and extract the corresponding values
+        Pattern indexPattern = Pattern.compile("i/\\s*(\\d+)\\s*");
+        Pattern amountPattern = Pattern.compile("a/\\s*(-?\\d+(\\.\\d+)?)\\s*");
 
-                String indexToReduceAsString = parts[1].trim();
-                String amountToReduceAsString = parts[2].trim();
+        Matcher indexMatcher = indexPattern.matcher(description);
+        Matcher amountMatcher = amountPattern.matcher(description);
+
+        if(indexMatcher.find() && amountMatcher.find()) {
+            try {
+                String indexToReduceAsString = indexMatcher.group(1);
+                String amountToReduceAsString = amountMatcher.group(1);
+
                 int indexToReduce = Integer.parseInt(indexToReduceAsString) - 1;
                 double amountToReduce = Double.parseDouble(amountToReduceAsString);
 
-                // Validate the index range.
+                // Validate the index range and that the amount is positive.
                 if (indexToReduce < 0 || indexToReduce >= savings.size()) {
                     LOGGER.log(Level.WARNING, "Index is out of bounds.");
                     System.out.println("Error: Index is out of bounds.");
                     return null;
                 }
+                if (amountToReduce <= 0) {
+                    LOGGER.log(Level.WARNING, "Amount must be a positive value.");
+                    System.out.println("Error: Amount must be a positive value.");
+                    return null;
+                }
+
                 LOGGER.log(Level.INFO, "Successfully processed ReduceSavingCommand!");
                 return new ReduceSavingCommand(savings, indexToReduce, amountToReduce);
             } catch (NumberFormatException e){

@@ -60,7 +60,7 @@ following format: `set budget c/<Category> b/<Amount>`
 
 ##### Printing Budgets
 The following UML Sequence diagram shows how `ListBudgetCommand` works when a user checks the budget status with the
-command: `budget print`
+command: `print budget`
 
 <img alt="ListBSD2.png" height="400" src="ListBSD2.png" width="700"/>
 
@@ -79,7 +79,7 @@ The activity diagram provides an overview of the Budget Management feature's wor
 
 1. The user types `set budget c/food b/500` to set a budget of $500 for the food category. The Parser class creates a 
 `SetBudgetCommand` object which calls `setBudget()` on the `ExpenseList` object.
-2. To view budgets, the user enters `budget print`. The Parser class creates a `ListBudgetCommand` object. This command 
+2. To view budgets, the user enters `print budget`. The Parser class creates a `ListBudgetCommand` object. This command 
 retrieves the budgets using `getBudgets()` and displays them, also indicating any categories that are over budget.
 
 ## 1. Introduction

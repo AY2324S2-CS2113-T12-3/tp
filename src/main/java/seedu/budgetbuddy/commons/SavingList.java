@@ -205,10 +205,12 @@ public class SavingList {
         }
     }
 
-    public void reduceSavings(int index, double amount){
-        if (index >= 0 && index < savings.size()){
+    // @@author Dheekshitha2
+    public void reduceSavings(int index, double amount) {
+
+        if (index >= 0 && index < savings.size()) {
             Saving saving = savings.get(index);
-            if(saving.getAmount() >= amount){
+            if (saving.getAmount() >= amount) {
                 saving.setAmount(saving.getAmount() - amount);
                 System.out.println("Savings reduced successfully!");
             } else {

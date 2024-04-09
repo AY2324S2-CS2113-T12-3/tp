@@ -51,6 +51,11 @@ public class SetBudgetCommandCreator extends CommandCreator {
                 try {
                     budget = Double.parseDouble(part.substring(2));
                     LOGGER.log(Level.INFO, "Budget extracted: " + budget);
+                    if (budget < 0) {
+                        LOGGER.log(Level.WARNING, "Budget cannot be negative.");
+                        System.out.println("Budget cannot be negative.");
+                        return null;
+                    }
                 } catch (NumberFormatException e) {
                     LOGGER.log(Level.SEVERE, "Invalid budget format. Budget should be a number.", e);
                     System.out.println("Invalid budget format. Budget should be a number");

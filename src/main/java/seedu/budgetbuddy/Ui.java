@@ -1,5 +1,7 @@
 package seedu.budgetbuddy;
 
+import java.util.Scanner;
+
 public class Ui {
     private static final String DIVIDER = "__________________________________________________";
 
@@ -39,6 +41,14 @@ public class Ui {
         System.out.println("10. Get Graphical Insights");
         System.out.println("Use 'menu INDEX' to select an option");
         System.out.println(DIVIDER);
+    }
+
+    // Method to get user confirmation from the console
+    public boolean getUserConfirmation() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Do you want to proceed with adding this expense? (yes/no)");
+        String userInput = scanner.nextLine().trim().toLowerCase();
+        return userInput.equals("yes");
     }
 
     /**
@@ -103,7 +113,7 @@ public class Ui {
             System.out.println("Manage budget");
             System.out.println("set budget c/CATEGORY b/BUDGET");
             System.out.println("get budget c/CATEGORY");
-            System.out.println("budget print");
+            System.out.println("print budget");
             break;
         case 10:
             System.out.println("Get Graphical Insights");

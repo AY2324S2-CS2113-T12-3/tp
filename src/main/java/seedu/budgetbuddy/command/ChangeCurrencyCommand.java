@@ -30,6 +30,7 @@ public class ChangeCurrencyCommand extends Command {
         currencyConverter.convertSavingCurrency(newCurrency, savings);
         currencyConverter.convertExpenseCurrency(newCurrency, expenses);
         currencyConverter.convertRecurringExpensesCurrency(newCurrency, recurringExpensesList);
+        currencyConverter.convertBudgetCurrency(newCurrency, expenses);
         DefaultCurrency.setDefaultCurrency(newCurrency);
     }
 }

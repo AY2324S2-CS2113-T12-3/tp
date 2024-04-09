@@ -202,4 +202,37 @@ public class CurrencyConverter {
 
         System.out.println("Default currency for Recurring Expenses changed to " + newCurrency);
     }
+
+    public void convertBudgetCurrency(Currency newCurrency, ExpenseList expenseList) {
+        if (expenseList == null) {
+            throw new IllegalArgumentException("ExpenseList cannot be null");
+        }
+
+        // Check if the new currency is the same as the default currency to avoid unnecessary conversion
+        if (DefaultCurrency.getDefaultCurrency().equals(newCurrency)) {
+            System.out.println("Same currency. No conversion needed for budgets.");
+            return;
+        }
+
+        // Iterate over each budget in the ExpenseList and convert its currency
+        for (Budget budget : expenseList.getBudgets()) {
+            // Assuming the budget amount is in the default currency
+            Currency defaultCurrency = DefaultCurrency.getDefaultCurrency();
+            try {
+                // Convert the budget amount from the default currency to the new currency
+                double convertedBudgetAmount = convertAmount(budget.getBudget(), defaultCurrency, newCurrency);
+                // Update the budget amount with the converted value
+                budget.setBudget(convertedBudgetAmount);
+            } catch (IllegalArgumentException e) {
+                // Handle any IllegalArgumentException thrown during conversion
+                LOGGER.severe("Error converting budget amount for category: " + budget.getCategory()
+                                    + "; " + e.getMessage());
+                System.out.println("Error converting budget amount for category: " + budget.getCategory()
+                                    + "; " + e.getMessage());
+            }
+        }
+
+        System.out.println("Budgets successfully converted to " + newCurrency.getCurrencyCode());
+    }
+
 }
