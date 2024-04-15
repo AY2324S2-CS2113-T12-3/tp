@@ -10,15 +10,17 @@ Given below are my contributions to the project
 
 #### New Feature : Add Expense and Add Savings 
 
-1. What it does : Allows user to add expense and savings to the app for users to monitor their spending habits 
-and savings growth over time.
-2. Justification : Users can save their spendings and savings.
+1. What it does : 
+- Add Expense: Users can enter details of their expenditures, such as amount, category (e.g., groceries, utilities, entertainment), and date. This facilitates a detailed tracking of where and how their money is being spent.
+- Add Savings: Similarly, users can log details of their savings, including the amount saved, the category of the savings (e.g., Salary, Investments, Gifts), and the date of deposition. This helps users monitor their savings goals and growth over time.
+2. Justification : This feature enhances the app's utility by enabling users to keep a meticulous record of their financial transactions. By tracking both expenses and savings, users can better manage their budgets, identify spending trends, and adjust their financial habits accordingly.
 
-#### New Feature : Add SplitExpense, List SplitExpense, and Settle SplitExpense
-1. What is does : Allows users to add expenses that are meant to be split amoung friends. Allows users to check the 
-added list of expenses that are to be among the friends. The users can also settle the expense once others have paid.
-2. Justification : This enhancement simplifies the  task of tracking shared expenses, making it easier for users to 
-manage shared activities without the hassle of manual calculations.
+#### New Feature : Add Shared Bill, Check Split Bill, and Settle Bill
+1. What is does :  This suite of features makes it easy for users to manage expenses shared with friends or colleagues. It supports the addition, listing, and settlement of shared expenses, streamlining the process of cost-sharing.
+-  Add Shared Bill: Users can record an expense that needs to be split with others, detailing the amount, the number of participants, and the description of the bill.
+-  Check Split Bill: This function displays all recorded shared expenses. Users can view details such as the description of the bill, and individual shares helping them track who has paid and who hasn't.
+-  Settle SplitExpense: Once all parties have paid their shares, users can mark the expense as settled. This feature could also facilitate transactions through integrated payment options, making the process smoother.
+2. Justification : Managing shared bills can often be cumbersome, especially when manual calculations are involved. This feature simplifies the task by automating calculations and tracking payments. It is particularly useful for shared accommodations, group trips, or any joint activities, where financial transparency and fairness are crucial. This enhances user experience by reducing potential conflicts over shared financial responsibilities and encourages more frequent use of the app for group activities.
 
 #### Code Contributed
 [RepoSenseLink](https://nus-cs2113-ay2324s2.github.io/tp-dashboard/?search=yyangdaa&breakdown=true&sort=groupTitle
@@ -26,9 +28,14 @@ manage shared activities without the hassle of manual calculations.
 docs~functional-code~test-code~other)
 
 #### Enhancements to existing features:
-1. Wrote JUnit tests for the ExpenseList, SavingsList, SplitExpenseList and Parser.
-- Implemented Logging/Assertions for improved error handling. (Pull Requests : [#45](https://github.com/AY2324S2-CS2113-T12-3/tp/pull/45), 
+1. Wrote JUnit tests for the ExpenseList, SavingsList, SplitExpenseList and Parser. [#35](https://github.com/AY2324S2-CS2113-T12-3/tp/pull/35)[#207](https://github.com/AY2324S2-CS2113-T12-3/tp/pull/207)
+2. Integrated addShared Bills with Storage. [#207](https://github.com/AY2324S2-CS2113-T12-3/tp/pull/207)
+3. Integrated Split Expense with currencyConverter. [#207](https://github.com/AY2324S2-CS2113-T12-3/tp/pull/207)
+4. Implemented Logging/Assertions for improved error handling. (Pull Requests : [#45](https://github.com/AY2324S2-CS2113-T12-3/tp/pull/45), 
 [#56](https://github.com/AY2324S2-CS2113-T12-3/tp/pull/56)).
+
+#### Contributions to the UG
+Added documentation for the features `add expense`, `add savings`, `add shared bill`, `check split bill` and `settle bill` 
 
 #### Developer Guide
 - Added implementation details of the `AddExpense`, `AddSaving` and `SplitExpense` feature. (Pull Requests : [#207](https://github.com/AY2324S2-CS2113-T12-3/tp/pull/207)).
