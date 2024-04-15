@@ -28,8 +28,10 @@ Given below are my contributions to the project
 docs~functional-code~test-code~other)
 
 #### Enhancements to existing features:
-1. Wrote JUnit tests for the ExpenseList, SavingsList, SplitExpenseList and Parser.
-2. Implemented Logging/Assertions for improved error handling. (Pull Requests : [#45](https://github.com/AY2324S2-CS2113-T12-3/tp/pull/45), 
+1. Wrote JUnit tests for the ExpenseList, SavingsList, SplitExpenseList and Parser. [#35](https://github.com/AY2324S2-CS2113-T12-3/tp/pull/35)[#207](https://github.com/AY2324S2-CS2113-T12-3/tp/pull/207)
+2. Integrated addShared Bills with Storage. [#207](https://github.com/AY2324S2-CS2113-T12-3/tp/pull/207)
+3. Integrated Split Expense with currencyConverter. [#207](https://github.com/AY2324S2-CS2113-T12-3/tp/pull/207)
+4. Implemented Logging/Assertions for improved error handling. (Pull Requests : [#45](https://github.com/AY2324S2-CS2113-T12-3/tp/pull/45), 
 [#56](https://github.com/AY2324S2-CS2113-T12-3/tp/pull/56)).
 
 #### Contributions to the UG
